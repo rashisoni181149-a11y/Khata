@@ -1,0 +1,205 @@
+<!DOCTYPE html>
+<html lang="hi-Latn">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>Udhaar Khata</title>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Mukta:wght@400;600;800&display=swap">
+<style>
+:root{--bg:#EEF2F7;--paper:#fff;--ink:#14213D;--muted:#5B6B85;--line:#D5DDE8;--red:#C62828;--green:#1B7F4B;--acc:#1E3A8A;--onacc:#fff;--wa:#1B7F4B;--onwa:#fff;color-scheme:light;box-sizing:border-box;padding-top:env(safe-area-inset-top,0px);padding-bottom:env(safe-area-inset-bottom,0px)}
+@media (prefers-color-scheme:dark){:root:not([data-theme="light"]){--bg:#0E1626;--paper:#16213A;--ink:#E8EEF9;--muted:#9AA9C4;--line:#2A3856;--red:#FF8A80;--green:#5FD39A;--acc:#8FB0FF;--onacc:#0E1626;--wa:#5FD39A;--onwa:#0E1626;color-scheme:dark}}
+:root[data-theme="dark"]{--bg:#0E1626;--paper:#16213A;--ink:#E8EEF9;--muted:#9AA9C4;--line:#2A3856;--red:#FF8A80;--green:#5FD39A;--acc:#8FB0FF;--onacc:#0E1626;--wa:#5FD39A;--onwa:#0E1626;color-scheme:dark}
+*{box-sizing:border-box}
+html{scroll-padding-top:env(safe-area-inset-top,0px)}
+body{margin:0;background:var(--bg);color:var(--ink);font:400 16px/1.5 "Mukta",system-ui,-apple-system,"Segoe UI",sans-serif;font-variant-numeric:tabular-nums}
+main{max-width:640px;margin:0 auto;padding:0 0 64px}
+button,input{font:inherit;color:inherit}
+.hero{background:var(--acc);color:var(--onacc);padding:28px 20px 26px}
+.hero .lbl{font-size:.95rem;opacity:.85}
+.hero .big{font-weight:800;font-size:clamp(2.6rem,11vw,3.8rem);line-height:1.05;letter-spacing:-.01em;margin:2px 0 6px}
+.hero .sub{font-size:.95rem;opacity:.9}
+.hero .back{background:none;border:0;color:inherit;padding:0 0 10px;font-weight:600;cursor:pointer;opacity:.9}
+.hero h1{margin:0;font-size:1.5rem;font-weight:800;line-height:1.2}
+.hero .ph{opacity:.85;font-size:.95rem;margin-bottom:10px}
+.pad{padding:16px 16px 0}
+.bar{display:flex;gap:10px;margin-bottom:10px}
+input[type=text],input[type=search],input[type=tel],input[type=number],input[type=date]{width:100%;min-height:46px;padding:8px 12px;border:1.5px solid var(--line);border-radius:10px;background:var(--paper)}
+input:focus-visible,button:focus-visible,label:focus-within,a:focus-visible{outline:3px solid var(--acc);outline-offset:2px}
+.btn{min-height:46px;padding:8px 16px;border-radius:10px;border:1.5px solid var(--acc);background:var(--acc);color:var(--onacc);font-weight:600;cursor:pointer;white-space:nowrap;display:inline-flex;align-items:center;justify-content:center;text-decoration:none}
+.btn.ghost{background:transparent;color:var(--ink);border-color:var(--line)}
+.btn.wa{background:var(--wa);border-color:var(--wa);color:var(--onwa);width:100%}
+.btn.del{background:transparent;border-color:var(--red);color:var(--red)}
+.acts{display:flex;gap:10px;flex-wrap:wrap;margin-bottom:14px}
+.acts .btn{flex:1 1 150px}
+.card{background:var(--paper);border:1.5px solid var(--line);border-radius:12px;padding:14px;margin-bottom:14px}
+.card h2{font-size:1.05rem;margin:0 0 10px;font-weight:800}
+.fld{display:flex;flex-direction:column;gap:10px;margin-bottom:10px}
+.seg{display:grid;grid-template-columns:1fr 1fr;gap:8px;margin-bottom:10px}
+.seg label{position:relative}
+.seg input{position:absolute;opacity:0;inset:0;cursor:pointer}
+.seg span{display:block;text-align:center;padding:10px;border:1.5px solid var(--line);border-radius:10px;font-weight:600}
+.seg input:checked+span.b{background:var(--red);border-color:var(--red);color:var(--paper)}
+.seg input:checked+span.j{background:var(--green);border-color:var(--green);color:var(--paper)}
+.seg label:focus-within{outline:3px solid var(--acc);outline-offset:2px;border-radius:10px}
+.two{display:grid;grid-template-columns:1fr 1fr;gap:10px}
+ul{list-style:none;margin:0;padding:0}
+.party{width:100%;display:flex;justify-content:space-between;align-items:center;gap:12px;text-align:left;padding:14px;background:var(--paper);border:0;border-bottom:1px solid var(--line);cursor:pointer}
+.plist{border:1.5px solid var(--line);border-radius:12px;overflow:hidden}
+.plist li:last-child .party{border-bottom:0}
+.party .n{font-weight:600;font-size:1.05rem}
+.party small,.row small{display:block;color:var(--muted);font-size:.85rem}
+.amt{text-align:right;font-weight:800;font-size:1.1rem}
+.r{color:var(--red)}.g{color:var(--green)}.z{color:var(--muted)}
+.row{display:grid;grid-template-columns:1fr auto 40px;gap:8px;align-items:center;padding:10px 4px 10px 14px;border-bottom:1px solid var(--line);border-left:3px double var(--red)}
+.row:last-child{border-bottom:0}
+.row .a{text-align:right;font-weight:600}
+.x{width:40px;height:40px;border:0;background:none;color:var(--muted);font-size:1.4rem;cursor:pointer;border-radius:8px}
+.x[data-armed]{color:var(--red);font-size:.8rem;font-weight:600}
+.empty{padding:28px 16px;text-align:center;color:var(--muted)}
+details summary{cursor:pointer;font-weight:600;padding:6px 0}
+.note{font-size:.88rem;color:var(--muted);margin:8px 0 0}
+#toast{position:fixed;left:50%;bottom:calc(20px + env(safe-area-inset-bottom,0px));transform:translate(-50%,20px);max-width:92vw;background:var(--ink);color:var(--bg);padding:10px 16px;border-radius:10px;opacity:0;pointer-events:none;transition:opacity .2s,transform .2s;font-size:.95rem}
+#toast.on{opacity:1;transform:translate(-50%,0)}
+@media (prefers-reduced-motion:reduce){#toast{transition:none}}
+</style>
+</head>
+<body>
+<main id="app"></main>
+<div id="toast" role="status" aria-live="polite"></div>
+<script>
+const K='udhaar-v1';
+let S={parties:[]},V={n:'home'},Q='',ADD=false,tt;
+try{const r=JSON.parse(localStorage.getItem(K));if(r&&Array.isArray(r.parties))S=r}catch(e){}
+const $=s=>document.querySelector(s);
+const save=()=>{try{localStorage.setItem(K,JSON.stringify(S))}catch(e){}};
+const uid=()=>Date.now().toString(36)+Math.random().toString(36).slice(2,6);
+const today=()=>new Date(Date.now()-new Date().getTimezoneOffset()*60000).toISOString().slice(0,10);
+const esc=s=>String(s==null?'':s).replace(/[&<>"']/g,c=>({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'}[c]));
+const fmt=n=>'₹'+Math.abs(n).toLocaleString('en-IN',{maximumFractionDigits:2});
+const bal=p=>p.entries.reduce((a,e)=>a+(e.t==='b'?e.amt:-e.amt),0);
+const dstr=d=>new Date(d+'T00:00').toLocaleDateString('en-IN',{day:'numeric',month:'short',year:'numeric'});
+const norm=s=>{const d=String(s||'').replace(/\D/g,'');if(d.length===10)return '91'+d;if(d.length===11&&d[0]==='0')return '91'+d.slice(1);return d};
+const toast=m=>{const el=$('#toast');el.textContent=m;el.classList.add('on');clearTimeout(tt);tt=setTimeout(()=>el.classList.remove('on'),3400)};
+const wa=p=>{const msg='Namaste '+p.name+' ji, aapka '+fmt(bal(p))+' baaki hai. Kripya jald bhugtan kar dein. Dhanyawad.';return 'https://wa.me/'+norm(p.phone)+'?text='+encodeURIComponent(msg)};
+function arm(b,t){if(b.dataset.armed)return true;b.dataset.armed=1;const o=b.textContent;b.textContent=t;setTimeout(()=>{delete b.dataset.armed;b.textContent=o},3000);return false}
+
+async function pick(multi){
+  if(!('contacts' in navigator&&navigator.contacts.select)){toast('Yeh browser contact picker nahi deta. Android Chrome mein kholein ya .vcf file se jodein.');return []}
+  try{const r=await navigator.contacts.select(['name','tel'],{multiple:multi});return r.map(c=>({name:(c.name&&c.name[0]||'').trim(),phone:(c.tel&&c.tel[0]||'').trim()}))}
+  catch(e){toast('Contacts nahi khul paye. Permission check karein.');return []}
+}
+function addList(list){
+  let n=0;
+  list.forEach(c=>{
+    if(!c.name&&!c.phone)return;
+    const np=norm(c.phone);
+    if(np&&S.parties.some(p=>norm(p.phone)===np))return;
+    S.parties.push({id:uid(),name:c.name||c.phone,phone:c.phone,entries:[]});n++;
+  });
+  save();return n;
+}
+
+function render(){V.n==='home'?home():party()}
+
+function home(){
+  let due=0,adv=0,n=0;
+  S.parties.forEach(p=>{const b=bal(p);if(b>0){due+=b;n++}else if(b<0)adv-=b});
+  $('#app').innerHTML=`
+  <header class="hero"><div class="lbl">Kul baaki, aapko lena hai</div><div class="big">${fmt(due)}</div>
+  <div class="sub">${n} party se baaki${adv?`. Advance ${fmt(adv)} aapko dena hai.`:'.'}</div></header>
+  <div class="pad">
+  <div class="bar"><input id="q" type="search" placeholder="Party ya number khojein" aria-label="Party khojein" value="${esc(Q)}"><button class="btn" data-act="toggleAdd">Party jodo</button></div>
+  <div class="acts"><button class="btn ghost" data-act="pickMany">Contacts se jodo</button>
+  <label class="btn ghost" style="cursor:pointer">VCF file se jodo<input type="file" id="vcf" accept=".vcf,text/vcard,text/x-vcard" hidden></label></div>
+  ${ADD?`<div class="card"><h2>Nayi party</h2><div class="fld"><input id="pn" type="text" placeholder="Naam" aria-label="Naam"><input id="pp" type="tel" placeholder="WhatsApp number" aria-label="WhatsApp number" inputmode="tel"></div>
+  <div class="acts" style="margin:0"><button class="btn ghost" data-act="pickOne">Contact se chuno</button><button class="btn" data-act="addP">Party save karein</button></div></div>`:''}
+  <div id="list"></div></div>`;
+  list();
+}
+function list(){
+  const q=Q.trim().toLowerCase(),el=$('#list');if(!el)return;
+  const ps=S.parties.filter(p=>!q||p.name.toLowerCase().includes(q)||String(p.phone).includes(q)).sort((a,b)=>bal(b)-bal(a)||a.name.localeCompare(b.name));
+  if(!S.parties.length){el.innerHTML='<div class="empty">Abhi koi party nahi hai. Party jodo dabayein ya contacts se jodein.</div>';return}
+  if(!ps.length){el.innerHTML='<div class="empty">Koi party nahi mili.</div>';return}
+  el.innerHTML='<ul class="plist">'+ps.map(p=>{
+    const b=bal(p),last=p.entries.reduce((m,e)=>e.date>m?e.date:m,'');
+    const cls=b>0?'r':b<0?'g':'z',lb=b>0?'baaki':b<0?'advance':'barabar';
+    return `<li><button class="party" data-act="open" data-id="${p.id}"><span><span class="n">${esc(p.name)}</span><small>${p.phone?esc(p.phone):'Number nahi'}${last?'. Aakhri entry '+dstr(last):''}</small></span>
+    <span class="amt ${cls}">${b?fmt(b):'₹0'}<small>${lb}</small></span></button></li>`}).join('')+'</ul>';
+}
+
+function party(){
+  const p=S.parties.find(x=>x.id===V.id);
+  if(!p){V={n:'home'};return home()}
+  const b=bal(p);let run=0;
+  const rows=[...p.entries].sort((x,y)=>x.date.localeCompare(y.date)||x.ts-y.ts).map(e=>{run+=e.t==='b'?e.amt:-e.amt;return{...e,run}}).reverse();
+  const lb=b>0?'baaki hai':b<0?'advance, aapko dena hai':'hisaab barabar';
+  $('#app').innerHTML=`
+  <header class="hero"><button class="back" data-act="back">&#8249; Sab party</button><h1>${esc(p.name)}</h1><div class="ph">${p.phone?esc(p.phone):'Number nahi jora'}</div>
+  <div class="big">${fmt(b)}</div><div class="sub">${lb}</div></header>
+  <div class="pad">
+  ${b>0&&norm(p.phone).length>=10?`<p><a class="btn wa" href="${wa(p)}" target="_blank" rel="noopener">WhatsApp par yaad dilayein</a></p>`:
+    b>0?'<p class="note">Reminder bhejne ke liye neeche &ldquo;Party ki jaankari&rdquo; mein number daalein.</p>':''}
+  <div class="card"><h2>Nayi entry</h2>
+  <div class="seg"><label><input type="radio" name="tp" value="b" checked><span class="b">Baaki (udhaar diya)</span></label><label><input type="radio" name="tp" value="j"><span class="j">Jama (paisa mila)</span></label></div>
+  <div class="two fld"><input id="amt" type="number" inputmode="decimal" min="0" step="any" placeholder="Rakam ₹" aria-label="Rakam"><input id="dt" type="date" value="${today()}" aria-label="Tareekh"></div>
+  <div class="fld"><input id="nt" type="text" placeholder="Note, jaise: aata, chawal (optional)" aria-label="Note"></div>
+  <button class="btn" style="width:100%" data-act="addE">Entry save karein</button></div>
+  <div class="card" style="padding:0"><h2 style="padding:14px 14px 0">Hisaab</h2>
+  ${rows.length?'<ul>'+rows.map(e=>`<li class="row"><div>${dstr(e.date)}<small>${esc(e.note)}</small></div>
+    <div class="a ${e.t==='b'?'r':'g'}">${e.t==='b'?'Baaki':'Jama'} ${fmt(e.amt)}<small>Total ${e.run<0?'advance ':'baaki '}${fmt(e.run)}</small></div>
+    <button class="x" data-act="delE" data-id="${e.id}" aria-label="Entry hatao">&times;</button></li>`).join('')+'</ul>':'<div class="empty">Abhi koi entry nahi. Upar se pehli entry likhein.</div>'}</div>
+  <div class="card"><details><summary>Party ki jaankari</summary>
+  <div class="fld" style="margin-top:10px"><input id="en" type="text" value="${esc(p.name)}" aria-label="Naam"><input id="ep" type="tel" inputmode="tel" value="${esc(p.phone)}" placeholder="WhatsApp number" aria-label="WhatsApp number"></div>
+  <div class="acts" style="margin:0"><button class="btn" data-act="saveP">Save karein</button><button class="btn del" data-act="delP">Party hatao</button></div>
+  <p class="note">10 digit ka number likhne par +91 apne aap lag jata hai.</p></details></div>
+  </div>`;
+}
+
+const A={
+  open(t){V={n:'party',id:t.dataset.id};render();scrollTo(0,0)},
+  back(){V={n:'home'};render();scrollTo(0,0)},
+  toggleAdd(){ADD=!ADD;home()},
+  async pickOne(){const r=await pick(false);if(r[0]){$('#pn').value=r[0].name;$('#pp').value=r[0].phone}},
+  async pickMany(){const r=await pick(true);if(!r.length)return;const n=addList(r);toast(n?n+' party jodi gayi':'Yeh sab pehle se list mein hain');home()},
+  addP(){
+    const name=$('#pn').value.trim(),phone=$('#pp').value.trim();
+    if(!name){toast('Naam daalein');return}
+    S.parties.push({id:uid(),name,phone,entries:[]});save();ADD=false;toast('Party jodi gayi');home();
+  },
+  addE(){
+    const p=S.parties.find(x=>x.id===V.id),amt=parseFloat($('#amt').value),date=$('#dt').value||today();
+    if(!(amt>0)){toast('Sahi rakam daalein');return}
+    p.entries.push({id:uid(),t:document.querySelector('input[name=tp]:checked').value,amt,date,note:$('#nt').value.trim(),ts:Date.now()});
+    save();toast('Entry save ho gayi');party();
+  },
+  delE(t){
+    if(!arm(t,'Pakka?'))return;
+    const p=S.parties.find(x=>x.id===V.id);p.entries=p.entries.filter(e=>e.id!==t.dataset.id);save();party();
+  },
+  saveP(){
+    const p=S.parties.find(x=>x.id===V.id),n=$('#en').value.trim();
+    if(!n){toast('Naam khaali nahi ho sakta');return}
+    p.name=n;p.phone=$('#ep').value.trim();save();toast('Jaankari save ho gayi');party();
+  },
+  delP(t){
+    if(!arm(t,'Pakka hatao?'))return;
+    S.parties=S.parties.filter(x=>x.id!==V.id);save();V={n:'home'};home();toast('Party hata di gayi');
+  }
+};
+document.addEventListener('click',e=>{const t=e.target.closest('[data-act]');if(t&&A[t.dataset.act])A[t.dataset.act](t)});
+document.addEventListener('input',e=>{if(e.target.id==='q'){Q=e.target.value;list()}});
+document.addEventListener('change',e=>{
+  if(e.target.id!=='vcf'||!e.target.files[0])return;
+  e.target.files[0].text().then(txt=>{
+    const cards=txt.split(/BEGIN:VCARD/i).slice(1).map(c=>{
+      const f=c.match(/^FN[^:\r\n]*:(.*)$/mi),t=c.match(/^(?:item\d+\.)?TEL[^:\r\n]*:(.*)$/mi);
+      return{name:f?f[1].trim():'',phone:t?t[1].trim():''};
+    });
+    const n=addList(cards);toast(n?n+' party jodi gayi':'Koi nayi party nahi mili');home();
+  }).catch(()=>toast('File padhi nahi ja saki'));
+});
+render();
+</script>
+</body>
+</html>
